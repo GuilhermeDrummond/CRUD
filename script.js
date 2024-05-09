@@ -50,4 +50,16 @@ function addParagrafo(valorInput) {
 
     // Adicionar a nova div à tela
     document.body.appendChild(novaDiv);
+
+    // Adicionar um ouvinte de evento de clique ao botão de classe ".delete" para remover a div desejada
+    botaoDelete.addEventListener('click', function() {
+        const divParaRemover = document.querySelector('.paragrafo');
+
+        if (divParaRemover) {
+            divParaRemover.remove();
+        }
+
+    });
 }
+
+
