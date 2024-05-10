@@ -60,6 +60,33 @@ function addParagrafo(valorInput) {
         }
 
     });
+
+    const editButton = document.querySelector('#edit2');
+    const inputEdit = document.querySelector('.inputEdit');
+    const paragrafo = document.querySelector('.paragrafo');
+    const modal = document.querySelector('.modal');
+    const overlay = document.querySelector('.overlay');
+    const closeButton = document.querySelector('.close');
+
+    botaoEdit.addEventListener('click', function() {
+        modal.classList.add('show');
+        overlay.classList.add('show');
+    });
+
+    closeButton.addEventListener('click', function() {
+        modal.classList.remove('show');
+        overlay.classList.remove('show');
+    });
+
+    editButton.addEventListener('click', function() {
+        const novoValor = inputEdit.value;
+        novoParagrafo.textContent = novoValor;
+        modal.classList.remove('show');
+        overlay.classList.remove('show');
+    });
+
+    closeButton.addEventListener('click', function() {
+        modal.classList.remove('show');
+        overlay.classList.remove('show');
+    });
 }
-
-

@@ -79,7 +79,7 @@ p{
     height: 40px;
     width: 40px;
     border-radius: 10px;
-    background-color:rgb(198, 24, 24);
+    background-color:rgb(43, 98, 199) ;
     cursor: pointer;
     
 }
@@ -99,74 +99,75 @@ p{
     margin-top: 25px;
     font-family: 'Nunito', sans-serif;
     font-size: 22px;
-    text-transform: uppercase;
     letter-spacing: 1.3px;
-    font-weight: 700;
     color: #313133;
     background: #4FD1C5;
     background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
     border: none;
     border-radius: 100px;
-    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
-    transition: all 0.3s ease-in-out 0s;
     cursor: pointer;
     outline: none;
     position: relative;
     padding: 10px;
   }
   
-  .botao::before {
-    content: '';
-    border-radius: 1000px;
-    min-width: calc(80px + 12px);
-    min-height: calc(60px + 12px);
-    border: 6px solid #00FFCB;
-    box-shadow: 0 0 60px rgba(0,255,203,.64);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: all .3s ease-in-out 0s;
-  }
-  
-  .botao:hover, .botao:focus {
-    color: #313133;
-    transform: translateY(-6px);
-  }
-  
-  .botao:hover::before, .botao:focus::before {
-    opacity: 1;
-  }
-  
-  .botao::after {
-    content: '';
-    width: 30px; 
-    height: 30px;
-    border-radius: 50%;
-    border: 6px solid #00FFCB;
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: ring 5s infinite;
-  }
-  
-  .botao:hover::after, .botao:focus::after {
-    animation: none;
+
+.modal {
     display: none;
-  }
-  
-  @keyframes ring {
-    0% {
-      width: 30px;
-      height: 30px;
-      opacity: 1;
-    }
-    100% {
-      width: 120px;
-      height: 120px;
-      opacity: 0;
-    }
-  }
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    padding: 20px;
+    max-width: 80%;
+}
+
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 250px;
+    padding: 40px;
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+#edit2 {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #8b0000;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+/* Show Class */
+.show {
+    display: block;
+}
